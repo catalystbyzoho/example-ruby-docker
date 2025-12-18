@@ -1,0 +1,36 @@
+<div class="grid">
+  <% apis.each do |api| %>
+    <div class="card">
+      <div class="badge"><%= api[:method] %></div>
+      <div class="path">
+        <% if api[:method] == "GET" %>
+          <a href="<%= api[:path] %>"><%= api[:path] %></a>
+        <% else %>
+          <%= api[:path] %>
+        <% end %>
+      </div>
+      <div class="subtitle"><%= api[:description] %></div>
+
+      <% if api[:path] == "/api/ping" %>
+        <pre>BASE_URL="<%= request.base_url %>"
+curl -s "$BASE_URL/api/ping" | jq</pre>
+      <% elsif api[:path] == "/api/time" %>
+        <pre>BASE_URL="<%= request.base_url %>"
+curl -s "$BASE_URL/api/time" | jq</pre>
+      <% elsif api[:path] == "/api/echo" %>
+        <pre>BASE_URL="<%= request.base_url %>"
+curl -s -X POST "$BASE_URL/api/echo" \
+  -H 'Content-Type: application/json' \
+  -d '{"hello":"world"}' | jq</pre>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div style="margin-top: 18px;" class="card">
+  <div style="font-weight: 700;">Tip</div>
+  <div class="subtitle" style="margin-top: 6px;">
+    Any unknown <span class="badge">/api/*</span> route returns JSON with <span class="badge">available_apis</span>.
+  </div>
+</div>
+

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ruby API Index</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --card: #f7f7fb;
+        --text: #111827;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --link: #1d4ed8;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); }
+      header { padding: 28px 0; border-bottom: 1px solid var(--border); }
+      .container { max-width: 980px; margin: 0 auto; padding: 20px; }
+      .subtitle { color: var(--muted); margin-top: 6px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 18px; }
+      .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+      .badge { display: inline-block; font-family: var(--mono); font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); background: #fff; }
+      .path { font-family: var(--mono); font-size: 14px; margin: 10px 0 6px; }
+      .path a { word-break: break-word; }
+      a { color: var(--link); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      pre {
+        background: #0b1020;
+        color: #e5e7eb;
+        border-radius: 12px;
+        padding: 12px;
+        font-family: var(--mono);
+        font-size: 12px;
+        line-height: 1.45;
+        max-width: 100%;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        overflow-x: hidden;
+      }
+      footer { color: var(--muted); font-size: 12px; padding: 20px 0; border-top: 1px solid var(--border); }
+
+      @media (max-width: 480px) {
+        header { padding: 18px 0; }
+        .container { padding: 14px; }
+        .card { padding: 12px; }
+        .grid { gap: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div style="font-weight: 700; font-size: 18px;">Ruby API Index</div>
+        <div class="subtitle">This page lists every API available in this app.</div>
+      </div>
+    </header>
+    <main class="container">
+      <%= yield %>
+    </main>
+    <footer>
+      <div class="container">
+        Running on <span class="badge"><%= request.host_with_port %></span>
+      </div>
+    </footer>
+  </body>
+</html>
+

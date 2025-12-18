@@ -1,0 +1,12 @@
+.git
+.bundle
+.ruby-gemset
+.ruby-version
+log
+tmp
+vendor/bundle
+node_modules
+*.swp
+*.swo
+.DS_Store
+
