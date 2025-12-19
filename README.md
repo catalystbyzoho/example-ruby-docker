@@ -19,26 +19,26 @@ bundle exec ruby app.rb
 
 Then open:
 
-- UI: `http://localhost:4567/`
+- UI: `http://localhost:9000/`
 
 ## APIs
 
 ### `GET /api/ping`
 
 ```bash
-curl -s http://localhost:4567/api/ping
+curl -s http://localhost:9000/api/ping
 ```
 
 ### `GET /api/time`
 
 ```bash
-curl -s http://localhost:4567/api/time
+curl -s http://localhost:9000/api/time
 ```
 
 ### `POST /api/echo`
 
 ```bash
-curl -s -X POST http://localhost:4567/api/echo \
+curl -s -X POST http://localhost:9000/api/echo \
   -H 'Content-Type: application/json' \
   -d '{"hello":"world"}'
 ```
@@ -54,16 +54,16 @@ docker build --platform=linux/amd64 -t ruby-rest-api .
 Run:
 
 ```bash
-docker run --rm -p 4567:4567 ruby-rest-api
+docker run --rm -p 9000:9000 ruby-rest-api
 ```
 
 Then open:
 
-- UI: `http://localhost:4567/`
+- UI: `http://localhost:9000/`
 
 ## Configuration
 
-- **`PORT`**: port to listen on (default: `4567`)
+- **`PORT`**: port to listen on (default: `9000`)
 - **`BIND`**: bind address (default: `0.0.0.0`)
 
 Example:

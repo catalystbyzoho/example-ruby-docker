@@ -4,7 +4,7 @@ require "time"
 
 set :root, File.dirname(__FILE__)
 set :bind, ENV.fetch("BIND", "0.0.0.0")
-set :port, Integer(ENV.fetch("PORT", "4567"))
+set :port, Integer(ENV.fetch("PORT", "9000"))
 set :server, :puma
 
 APIS = [

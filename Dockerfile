@@ -22,11 +22,11 @@ COPY --from=builder /app /app
 
 ENV RACK_ENV=production
 ENV BIND=0.0.0.0
-ENV PORT=4567
+ENV PORT=9000
 
 USER app
 
-EXPOSE 4567
+EXPOSE 9000
 
 CMD ["bundle", "exec", "ruby", "app.rb"]
 
